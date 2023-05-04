@@ -1,12 +1,12 @@
-import express from "express";
+const express = require('express');
 
-import cors from "cors";
+const cors = require('cors');
 
-import petRoutes from "./pets/routes/pets.routes.js";
+const petRoutes = require('./pets/routes/pets.routes.js');
 
 const app = express();
 
-const port = 5000;
+const port = 3000;
 
 //Global middlewares
 app.use(cors());
@@ -21,4 +21,4 @@ if (process.env.NODE_ENV !== 'test') {
     app.listen(port, () => console.log(`⚡️[server]: Server is running at https://localhost:${port}`))
 };
 
-export default app
+export  default app;
