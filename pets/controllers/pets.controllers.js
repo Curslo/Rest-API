@@ -3,6 +3,7 @@ import {getItem, listItem, editItem, addItem, deleteItem} from '../models/pets.m
 export const getPet = (req, res) => {
     try {
         const resp = getItem(parseInt(req.params.id));
+        console.log(resp)
         res.status(200).json(resp)
     } catch (err) {
         res.status(500).send(err)
@@ -17,7 +18,7 @@ export const listPets = (req, res) => {
         res.status(500).send(err);
     }
 };
-f
+
 export const editPet = (req, res) => {
     try {
         const resp = editItem(parseInt(req.params.id), req.body);

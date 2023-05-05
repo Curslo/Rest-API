@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 
-const cors = require('cors');
+import cors from 'cors';
 
-const petRoutes = require('./pets/routes/pets.routes.js');
+import petRoutes from './pets/routes/pets.routes.js';
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-app.use('pets', petRoutes);
+app.use('/pets', petRoutes);
 
 //Server setup
 if (process.env.NODE_ENV !== 'test') {

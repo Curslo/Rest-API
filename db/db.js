@@ -15,7 +15,7 @@ const db = {
         },
         {
             id : 3,
-            nmae : 'Mittens',
+            name : 'Mittens',
             age : 2,
             breed : 'tabby'
         },

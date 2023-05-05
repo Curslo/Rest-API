@@ -1,23 +1,17 @@
-import express from "express";
+import { Router } from 'express';
 
-import {
-    listPets,
-    getPet,
-    editPet,
-    addPet,
-    deletePet,
-} from "../controllers/pets.controllers.js";
+import { listPets, getPet, editPet, addPet, deletePet } from '../controllers/pets.controllers.js';
 
-const router = express.Router();
+const router = Router();
 
 router.get("/", listPets);
 
-router,get('/:id', getPet);
+router.get('/:id', getPet);
 
 router.put('/:id', editPet);
 
 router.post('/', addPet);
 
-router.delete("/", deletePet);
+router.delete('/:id', deletePet);
 
 export default router

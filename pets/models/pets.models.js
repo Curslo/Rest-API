@@ -1,8 +1,9 @@
-import db from "../..db/db.js";
+import db from '../../db/db.js';
 
 export const getItem = id => {
+    console.log(db)
     try {
-        const pet = db?.pets?.filter(pet => pet?.id === id)(0);
+        const pet = db?.pets?.find(pet => pet?.id === id);
         return pet;
     } catch (err) {
         console.log("Error", err);
@@ -33,7 +34,7 @@ export const editItem = (id, data) => {
 
 export const addItem = data => {
     try {
-        const newPet = {id: db.pets.length = 1, ...data};
+        const newPet = {id: db.pets.length  +1, ...data};
         db.pets.push(newPet);
         return newPet;
     } catch (error) {
@@ -51,31 +52,7 @@ export const deleteItem = id => {
             db.pets.splice(index, 1);
             return db.pets;
         }
-    } catch (error) {
-        
+    } catch (err) {
+        console.log(err);
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[
