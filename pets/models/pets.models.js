@@ -45,11 +45,13 @@ export const addItem = data => {
 export const deleteItem = id => {
     try {
         //Delete item from db
-        const index = db.pets.findIndex(pet =>pet.id === id)
+        const index = db.pets.find(pet =>pet.id === id)
 
         if(index === -1) throw new Error('Pet not found')
+        
         else {
             db.pets.splice(index, 1);
+            console.log(db.pets)
             return db.pets;
         }
     } catch (err) {

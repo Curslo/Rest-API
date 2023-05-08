@@ -3,7 +3,7 @@ import {getItem, listItem, editItem, addItem, deleteItem} from '../models/pets.m
 export const getPet = (req, res) => {
     try {
         const resp = getItem(parseInt(req.params.id));
-        console.log(resp)
+        // console.log(resp)
         res.status(200).json(resp)
     } catch (err) {
         res.status(500).send(err)
@@ -40,7 +40,8 @@ export const addPet = (req, res) => {
 export const deletePet = (req, res) => {
     try {
         const resp = deleteItem(parseInt(req.params.id));
-        res.status(200).jso(resp);
+        console.log(resp)
+        res.status(200).json(resp);
     } catch (err) {
         res.status(500).send(err);
     }

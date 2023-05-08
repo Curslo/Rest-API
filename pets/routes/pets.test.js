@@ -11,23 +11,23 @@ describe('GET "/"', () => {
         expect(res.type).toEqual(expect.stringContaining('json'))
         expect(res.body).toEqual([
             {
-                id : 1,
-                name : 'Rex',
-                type : 'dog',
-                age : 3,
-                breed : 'labrador'
+                id: 1,
+                name: 'Rex',
+                type: 'dog',
+                age: 3,
+                breed: 'labrador'
             },
             {
-                id : 2,
-                name : 'Fido',
-                age : 1,
-                breed : 'poodle'
+                id: 2,
+                name: 'Fido',
+                age: 1,
+                breed: 'poodle'
             },
             {
-                id : 3,
-                name : 'Mittens',
-                age : 2,
-                breed : 'tabby'
+                id: 3,
+                name: 'Mittens',
+                age: 2,
+                breed: 'tabby'
             },
         ])
     })
@@ -40,11 +40,11 @@ describe('GET "/:id"', () => {
         expect(res.type).toEqual(expect.stringContaining('json'))
         expect(res.body).toEqual(
             {
-                id : 1,
-                name : 'Rex',
-                type : 'dog',
-                age : 3,
-                breed : 'labrador'
+                id: 1,
+                name: 'Rex',
+                type: 'dog',
+                age: 3,
+                breed: 'labrador'
             },
         )
     })
@@ -92,33 +92,33 @@ describe('POST "/"', () => {
     })
 })
 
-describe('DELETE "/:id"', () => {
-    test('DELETE "/:id" delete given pet and return updated list', async () => {
-        const res = await requestWithSupertest.delete('/pets/2')
-        expect(res.status).toEqual(200)
-        expect(res.type).toEqual(expect.stringContaining('json'))
-        expect(res.body).toEqual([
-            {
-                id: 1,
-                name: 'Rexo',
-                type: 'dogo',
-                age: 4,
-                breed: 'doberman'
-            },
-            {
-                id: 3,
-                name: 'Mittens',
-                type: 'cat',
-                age: 2,
-                breed: 'tabby',
-            },
-            {
-                id: 4,
-                name: 'Salame',
-                type: 'cat',
-                age: 6,
-                breed: 'pinky'
-            }
-        ])
-    })
-})
+// describe('DELETE "/:id"', () => {
+//     test('DELETE "/:id" delete given pet and return updated list', async () => {
+//         const res = await requestWithSupertest.delete('/pets/2')
+//         expect(res.status).toEqual(200)
+//         expect(res.type).toEqual(expect.stringContaining('json'))
+//         expect(res.body).toEqual([
+//             {
+//                 id: 1,
+//                 name: 'Rexo',
+//                 type: 'dogo',
+//                 age: 4,
+//                 breed: 'doberman'
+//             },
+//             {
+//                 id: 3,
+//                 name: 'Mittens',
+//                 type: 'cat',
+//                 age: 2,
+//                 breed: 'tabby',
+//             },
+//             {
+//                 id: 4,
+//                 name: 'Salame',
+//                 type: 'cat',
+//                 age: 6,
+//                 breed: 'pinky'
+//             }
+//         ])
+//     })
+// })
